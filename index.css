@@ -1,0 +1,145 @@
+
+/* 全局样式 */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f7f7;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* 容器样式 */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* 导航栏样式 */
+#nav {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0;
+}
+
+#nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+#nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 16px;
+    /* 动画设置 */
+    transition: background-color 0.3s ease;
+}
+
+/* 导航栏下划线 */
+.hover-underline {
+    display: inline-block;
+    /* 相对定位 */
+    position: relative;
+    color: #000;
+    /* 动画设置 */
+    transition: color 0.3s ease;
+}
+
+.hover-underline::after {
+    content: '';
+    /* 绝对定位，继承父类 */
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background-color: #8C2283;
+    transform: scale(0);
+    transition: transform 0.3s ease;
+}
+/* 下划线显示 */
+.hover-underline:hover {
+    color: #8C2283;
+}
+
+.hover-underline:hover::after {
+    transform: scale(1);
+}
+/* 导航栏悬停效果 */
+#nav ul li a:hover {
+    background-color: #444;
+}
+
+/* 标题和段落样式 */
+h1, h2 {
+    color: #333;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+}
+
+h2 {
+    font-size: 2em;
+    margin-bottom: 0.75em;
+}
+
+/* 模块盒子 */
+.section {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    /* 边框阴影设置 */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* 列表样式 */
+.section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.section ul li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.section ul li::before {
+    /* 图标 */
+    content: '\f00c';
+    font-family: 'FontAwesome';
+    position: absolute;
+    left: 0;
+    color: #5cb85c;
+}
+
+/* 联系信息样式 */
+.contact-info {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.contact-info p {
+    margin: 0;
+    font-size: 1em;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    #nav ul {
+        flex-direction: column;
+    }
+}
